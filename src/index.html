@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validador de Bandeira de Cartão</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-image: url('../assets/money.jpg');
+            background-position: bottom center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(255, 255, 255, 0.7);
+        z-index: -1;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1.5px 4px rgba(0, 0, 0, 0.04);
+            padding: 32px 40px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            min-width: 420px;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        input {
+            font-size: 1.2em;
+            padding: 10px 14px;
+            border: 1.5px solid #bfc9d1;
+            border-radius: 8px;
+            outline: none;
+            transition: border 0.2s;
+            background: #f8fafc;
+            width: 220px;
+        }
+
+        input:focus {
+            border-color: #4f8cff;
+            background: #fff;
+        }
+
+        #bandeira-img {
+            width: 60px;
+            height: 40px;
+            object-fit: contain;
+            border: 1px solid #e0e6ed;
+            background: #f8fafc;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+            margin-left: 10px;
+        }
+
+        #bandeira-nome {
+            font-size: 1.1em;
+            margin-left: 16px;
+            min-width: 150px;
+            color: #4f8cff;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 32px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(79, 140, 255, 0.08);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                min-width: unset;
+                padding: 24px 10px;
+                gap: 16px;
+            }
+
+            #bandeira-nome {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Validador de Bandeira de Cartão</h2>
+    <div class="container">
+        <label for="cartao">Número do cartão:</label>
+        <input type="text" id="cartao" maxlength="19" placeholder="Digite o número do cartão" autocomplete="off">
+        <img id="bandeira-img" src="../assets/desconhecida.png" alt="Bandeira desconhecida"
+            title="Bandeira desconhecida">
+        <span id="bandeira-nome">Bandeira desconhecida</span>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
